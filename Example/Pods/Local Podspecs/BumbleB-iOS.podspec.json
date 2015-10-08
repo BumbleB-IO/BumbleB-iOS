@@ -1,0 +1,25 @@
+{
+  "name": "BumbleB-iOS",
+  "version": "0.1.0",
+  "summary": "A short description of BumbleB-iOS.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/BumbleB-iOS",
+  "license": "MIT",
+  "authors": {
+    "Ram Greenberg": "ramgreenberg@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/BumbleB-iOS.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "BumbleB-iOS": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
