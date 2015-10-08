@@ -52,6 +52,7 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-BumbleB-iOS_Tests/AFNetworking.framework'
   install_framework 'Pods-BumbleB-iOS_Tests/BumbleB_iOS.framework'
   install_framework 'Pods-BumbleB-iOS_Tests/Expecta.framework'
   install_framework 'Pods-BumbleB-iOS_Tests/Expecta_Snapshots.framework'
@@ -59,6 +60,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-BumbleB-iOS_Tests/Specta.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-BumbleB-iOS_Tests/AFNetworking.framework'
   install_framework 'Pods-BumbleB-iOS_Tests/BumbleB_iOS.framework'
   install_framework 'Pods-BumbleB-iOS_Tests/Expecta.framework'
   install_framework 'Pods-BumbleB-iOS_Tests/Expecta_Snapshots.framework'

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "BumbleB-iOS"
   s.version          = "0.1.0"
-  s.summary          = "A short description of BumbleB-iOS."
+  s.summary          = "BumbleB-iOS provides convenient access to the BumbleB API for objective-c developers. The interface converts Soundy API responses into NSObjects"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/BumbleB-iOS"
+  s.homepage         = "https://github.com/BumbleB-IO/BumbleB-iOS"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Ram Greenberg" => "ramgreenberg@hotmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/BumbleB-iOS.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/BumbleB-IO/BumbleB-iOS.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
@@ -36,5 +36,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 2.6'
 end

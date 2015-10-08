@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "823078050B75926F1B62A40E"
+               BlueprintIdentifier = "83FC7F97610E60C57A7976C7"
                BuildableName = "Expecta.framework"
                BlueprintName = "Expecta"
                ReferencedContainer = "container:Pods.xcodeproj">

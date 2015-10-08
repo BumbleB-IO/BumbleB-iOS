@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>BumbleB-iOS-BumbleB-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,27 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03E4E03809F5B91E66C605337B4FCD5B</key>
+		<key>1870330095BAE7D0B5E19F45319418E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>230E6597297F9DC9BE5F906402E93243</key>
+		<key>34B6528EBAEB1BCC50443BF3F6A06D8C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A637D86F464DB7FDF6DE36DA2B0870F</key>
+		<key>49F9431A0FC7FF2351145D71790B47A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>74E9D4E5056F8980C02849FFCF367C4D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8BAE9FB53D7D0C4638D474B33C9A20E3</key>
+		<key>87D7FF0512254C1F80404EABB37A194B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA12115B782FE72F486D883DF3B4C018</key>
+		<key>A5FDE2C55563BDE95372637949EBD073</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE8BDEEA899D9A7B7C0DFFB895BF51E5</key>
+		<key>A865E0CFAFDF9D550DC54FB694A3924A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D03B40A037E9ECCFACE132BBD0FA8190</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F78C6CE6D17F73F7ACDC9B774C91282A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

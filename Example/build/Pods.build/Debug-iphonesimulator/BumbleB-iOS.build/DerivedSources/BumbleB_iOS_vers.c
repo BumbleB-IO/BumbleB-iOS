@@ -1,0 +1,1 @@
+ const unsigned char BumbleB_iOSVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:BumbleB_iOS  PROJECT:Pods-0.1.0" "\n"; const double BumbleB_iOSVersionNumber __attribute__ ((used)) = (double)0.1;

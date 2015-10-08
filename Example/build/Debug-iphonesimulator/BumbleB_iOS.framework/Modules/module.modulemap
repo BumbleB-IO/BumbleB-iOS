@@ -1,0 +1,6 @@
+framework module BumbleB_iOS {
+  umbrella header "BumbleB-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

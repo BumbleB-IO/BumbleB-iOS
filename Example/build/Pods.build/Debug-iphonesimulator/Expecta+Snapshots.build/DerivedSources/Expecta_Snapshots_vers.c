@@ -1,0 +1,1 @@
+ const unsigned char Expecta_SnapshotsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Expecta_Snapshots  PROJECT:Pods-2.0.0" "\n"; const double Expecta_SnapshotsVersionNumber __attribute__ ((used)) = (double)2.0;

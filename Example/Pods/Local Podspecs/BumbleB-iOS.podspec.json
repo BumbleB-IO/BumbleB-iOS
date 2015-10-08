@@ -1,15 +1,15 @@
 {
   "name": "BumbleB-iOS",
   "version": "0.1.0",
-  "summary": "A short description of BumbleB-iOS.",
+  "summary": "BumbleB-iOS provides convenient access to the BumbleB API for objective-c developers. The interface converts Soundy API responses into NSObjects",
   "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/BumbleB-iOS",
+  "homepage": "https://github.com/BumbleB-IO/BumbleB-iOS",
   "license": "MIT",
   "authors": {
     "Ram Greenberg": "ramgreenberg@hotmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/BumbleB-iOS.git",
+    "git": "https://github.com/BumbleB-IO/BumbleB-iOS.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -20,6 +20,11 @@
   "resource_bundles": {
     "BumbleB-iOS": [
       "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "AFNetworking": [
+      "~> 2.6"
     ]
   }
 }
