@@ -5,16 +5,16 @@
 [![License](https://img.shields.io/cocoapods/l/BumbleB-iOS.svg?style=flat)](http://cocoapods.org/pods/BumbleB-iOS)
 [![Platform](https://img.shields.io/cocoapods/p/BumbleB-iOS.svg?style=flat)](http://cocoapods.org/pods/BumbleB-iOS)
 
-BumbleB-iOS is a [BumblB-API](https://github.com/BumbleB/BumbleB-API) client for iOS in Objective-C.
+BumbleB-iOS is a [BumblB-API](https://github.com/BumbleB-IO/BumbleB-API) client for iOS in Objective-C.
 
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-You should read about [BumbleB's Access and API keys here](https://github.com/BumbleB/BumbleB-API#access-and-api-keys).
+You should read about [BumbleB's Access and API keys here](https://github.com/BumbleB-IO/BumbleB-API#access-and-api-keys).
 
 ### BumbleB-iOS / BumbleB
-'BumbleB' provides convenient access to [BumbleB's API](https://github.com/BumbleB/BumbleB-API) endpoints:
+'BumbleB' provides convenient access to [BumbleB's API](https://github.com/BumbleB-IO/BumbleB-API) endpoints:
 
 - search
 - trending
