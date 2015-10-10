@@ -12,8 +12,6 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* BBAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* BBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* BBViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -22,6 +20,14 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		65AB3FA19CBC4AFB403868EF /* Pods_BumbleB_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37E2CADE1E228D8EEFB3256 /* Pods_BumbleB_iOS_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		94DBDC471BC6832400AF9F85 /* PCSEQVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */; settings = {ASSET_TAGS = (); }; };
+		94DBDC481BC6832400AF9F85 /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3A1BC6832400AF9F85 /* BBAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		94DBDC491BC6832400AF9F85 /* BBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3C1BC6832400AF9F85 /* BBMainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		94DBDC4A1BC6832400AF9F85 /* BBNoResultsFound.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DBDC3D1BC6832400AF9F85 /* BBNoResultsFound.xib */; settings = {ASSET_TAGS = (); }; };
+		94DBDC4B1BC6832400AF9F85 /* BBSearchBarWithActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3F1BC6832400AF9F85 /* BBSearchBarWithActivity.m */; settings = {ASSET_TAGS = (); }; };
+		94DBDC4C1BC6832400AF9F85 /* BBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC411BC6832400AF9F85 /* BBCell.m */; settings = {ASSET_TAGS = (); }; };
+		94DBDC4D1BC6832400AF9F85 /* BBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DBDC421BC6832400AF9F85 /* BBCell.xib */; settings = {ASSET_TAGS = (); }; };
+		94DBDC4F1BC6832400AF9F85 /* UIImage+GradientsMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */; settings = {ASSET_TAGS = (); }; };
 		F9359ECDF84BF8818B5B69E7 /* Pods_BumbleB_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5FD4089A26FB3F1B91F30E /* Pods_BumbleB_iOS_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -50,10 +56,6 @@
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* BumbleB-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BumbleB-iOS-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* BBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* BBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* BBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* BBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = "BumbleB-iOS_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,6 +65,20 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		91D9AC11795BE47E1A7B0839 /* Pods-BumbleB-iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BumbleB-iOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BumbleB-iOS_Tests/Pods-BumbleB-iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		94DBDC371BC6832400AF9F85 /* PCSEQVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCSEQVisualizer.h; sourceTree = "<group>"; };
+		94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCSEQVisualizer.m; sourceTree = "<group>"; };
+		94DBDC391BC6832400AF9F85 /* BBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAppDelegate.h; sourceTree = "<group>"; };
+		94DBDC3A1BC6832400AF9F85 /* BBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAppDelegate.m; sourceTree = "<group>"; };
+		94DBDC3B1BC6832400AF9F85 /* BBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMainViewController.h; sourceTree = "<group>"; };
+		94DBDC3C1BC6832400AF9F85 /* BBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMainViewController.m; sourceTree = "<group>"; };
+		94DBDC3D1BC6832400AF9F85 /* BBNoResultsFound.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBNoResultsFound.xib; sourceTree = "<group>"; };
+		94DBDC3E1BC6832400AF9F85 /* BBSearchBarWithActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSearchBarWithActivity.h; sourceTree = "<group>"; };
+		94DBDC3F1BC6832400AF9F85 /* BBSearchBarWithActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSearchBarWithActivity.m; sourceTree = "<group>"; };
+		94DBDC401BC6832400AF9F85 /* BBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCell.h; sourceTree = "<group>"; };
+		94DBDC411BC6832400AF9F85 /* BBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCell.m; sourceTree = "<group>"; };
+		94DBDC421BC6832400AF9F85 /* BBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBCell.xib; sourceTree = "<group>"; };
+		94DBDC451BC6832400AF9F85 /* UIImage+GradientsMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientsMaker.h"; sourceTree = "<group>"; };
+		94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientsMaker.m"; sourceTree = "<group>"; };
 		B37E2CADE1E228D8EEFB3256 /* Pods_BumbleB_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BumbleB_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB8B6AAE0AD156B22A0D4AC /* Pods-BumbleB-iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BumbleB-iOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BumbleB-iOS_Tests/Pods-BumbleB-iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,11 +146,21 @@
 		6003F593195388D20070C39A /* Example for BumbleB-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* BBAppDelegate.h */,
-				6003F59D195388D20070C39A /* BBAppDelegate.m */,
+				94DBDC391BC6832400AF9F85 /* BBAppDelegate.h */,
+				94DBDC3A1BC6832400AF9F85 /* BBAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* BBViewController.h */,
-				6003F5A6195388D20070C39A /* BBViewController.m */,
+				94DBDC3B1BC6832400AF9F85 /* BBMainViewController.h */,
+				94DBDC3C1BC6832400AF9F85 /* BBMainViewController.m */,
+				94DBDC3D1BC6832400AF9F85 /* BBNoResultsFound.xib */,
+				94DBDC3E1BC6832400AF9F85 /* BBSearchBarWithActivity.h */,
+				94DBDC3F1BC6832400AF9F85 /* BBSearchBarWithActivity.m */,
+				94DBDC401BC6832400AF9F85 /* BBCell.h */,
+				94DBDC411BC6832400AF9F85 /* BBCell.m */,
+				94DBDC421BC6832400AF9F85 /* BBCell.xib */,
+				94DBDC451BC6832400AF9F85 /* UIImage+GradientsMaker.h */,
+				94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */,
+				94DBDC371BC6832400AF9F85 /* PCSEQVisualizer.h */,
+				94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -277,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				94DBDC4A1BC6832400AF9F85 /* BBNoResultsFound.xib in Resources */,
+				94DBDC4D1BC6832400AF9F85 /* BBCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -390,9 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* BBAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* BBViewController.m in Sources */,
+				94DBDC471BC6832400AF9F85 /* PCSEQVisualizer.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				94DBDC4C1BC6832400AF9F85 /* BBCell.m in Sources */,
+				94DBDC491BC6832400AF9F85 /* BBMainViewController.m in Sources */,
+				94DBDC4F1BC6832400AF9F85 /* UIImage+GradientsMaker.m in Sources */,
+				94DBDC4B1BC6832400AF9F85 /* BBSearchBarWithActivity.m in Sources */,
+				94DBDC481BC6832400AF9F85 /* BBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
