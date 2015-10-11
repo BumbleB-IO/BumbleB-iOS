@@ -14,7 +14,7 @@ NSString * const kBumbleBPublicAPIKey = @"pl3tyKWdljSBr";
 @interface BumbleB ()
 
 @property (readwrite, strong, nonatomic) NSString * type;
-@property (readwrite, strong, nonatomic) NSString * bumbleBId;
+@property (readwrite, strong, nonatomic) NSString * soundId;
 @property (readwrite, strong, nonatomic) NSURL * pageUrl;
 @property (readwrite, strong, nonatomic) NSString * username;
 @property (readwrite, strong, nonatomic) NSURL * sourceUrl;
@@ -62,7 +62,7 @@ static NSString* kBumbleBAPIKey;
     }
     
     self.type = dictionary[kTypeKey];
-    self.bumbleBId = dictionary[kBumbleBIdKey];
+    self.soundId = dictionary[kBumbleBIdKey];
     self.pageUrl = [NSURL URLWithString:dictionary[kPageUrlKey]];
     self.username = dictionary[kUsernameKey];
     self.sourceUrl = [NSURL URLWithString:dictionary[kSourceUrlKey]];
@@ -119,13 +119,13 @@ static NSString* kBumbleBAPIKey;
     return [self requestForEndPoint:@"/search" params:@{@"q": term}];
 }
 
-+ (NSURLRequest *) bumbleBRequestForBumbleBId:(NSString *) bumbleBId{
-    return [self requestForEndPoint:[NSString stringWithFormat:@"/%@",bumbleBId] params:nil];
++ (NSURLRequest *) bumbleBRequestForSoundId:(NSString *) soundId{
+    return [self requestForEndPoint:[NSString stringWithFormat:@"/%@",soundId] params:nil];
 }
 
-+ (NSURLRequest *) bumbleBRequestForBumbleBWithIds:(NSArray *) bumbleBIds
++ (NSURLRequest *) bumbleBRequestForSoundsWithIds:(NSArray *) soundIds
 {
-    return [self requestForEndPoint:@"" params:@{@"ids": [bumbleBIds componentsJoinedByString:@","]}];
+    return [self requestForEndPoint:@"" params:@{@"ids": [soundIds componentsJoinedByString:@","]}];
 }
 
 + (NSURLRequest *) bumbleBTrendingRequestWithlimit:(NSUInteger)limit offset:(NSInteger) offset{
@@ -185,10 +185,10 @@ static NSString* kBumbleBAPIKey;
     return task;
 }
 
-+ (NSURLSessionDataTask *) bumbleBForId:(NSString *) bumbleBId completion:(void (^) (BumbleB * result, NSError * error)) block
++ (NSURLSessionDataTask *) bumbleBSoundForId:(NSString *) soundId completion:(void (^) (BumbleB * result, NSError * error)) block
 {
     NSURLSession * session = [NSURLSession sharedSession];
-    NSURLRequest * request = [self bumbleBRequestForBumbleBId:bumbleBId];
+    NSURLRequest * request = [self bumbleBRequestForSoundId:soundId];
     NSURLSessionDataTask * task = [session dataTaskWithRequest:request  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // network error
         if (error) {
@@ -210,10 +210,10 @@ static NSString* kBumbleBAPIKey;
     return task;
 }
 
-+ (NSURLSessionDataTask *) bumbleBForIds:(NSArray *) bumbleBIds completion:(void (^) (NSArray * results, NSError * error)) block
++ (NSURLSessionDataTask *) bumbleBSoundsForIds:(NSArray *) soundIds completion:(void (^) (NSArray * results, NSError * error)) block
 {
     NSURLSession * session = [NSURLSession sharedSession];
-    NSURLRequest * request = [self bumbleBRequestForBumbleBWithIds:bumbleBIds];
+    NSURLRequest * request = [self bumbleBRequestForSoundsWithIds:soundIds];
     NSURLSessionDataTask * task = [session dataTaskWithRequest:request  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // network error
         if (error) {
