@@ -53,7 +53,7 @@
 }
 
 -(void)setSound:(BumbleB *)sound{
-    if([sound.bumbleBId isEqualToString:self.sound.bumbleBId]){
+    if([sound.soundId isEqualToString:self.sound.soundId]){
         return;
     }
     
