@@ -2,7 +2,7 @@
 //  BumbleBSound.h
 //  Pods
 //
-//  Created by Ram Greenberg on 10/8/15.
+//  Created by BumbleB on 10/8/15.
 //
 //
 

@@ -20,14 +20,16 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		65AB3FA19CBC4AFB403868EF /* Pods_BumbleB_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37E2CADE1E228D8EEFB3256 /* Pods_BumbleB_iOS_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		94DBDC471BC6832400AF9F85 /* PCSEQVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */; settings = {ASSET_TAGS = (); }; };
-		94DBDC481BC6832400AF9F85 /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3A1BC6832400AF9F85 /* BBAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		94DBDC491BC6832400AF9F85 /* BBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3C1BC6832400AF9F85 /* BBMainViewController.m */; settings = {ASSET_TAGS = (); }; };
-		94DBDC4A1BC6832400AF9F85 /* BBNoResultsFound.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DBDC3D1BC6832400AF9F85 /* BBNoResultsFound.xib */; settings = {ASSET_TAGS = (); }; };
-		94DBDC4B1BC6832400AF9F85 /* BBSearchBarWithActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3F1BC6832400AF9F85 /* BBSearchBarWithActivity.m */; settings = {ASSET_TAGS = (); }; };
-		94DBDC4C1BC6832400AF9F85 /* BBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC411BC6832400AF9F85 /* BBCell.m */; settings = {ASSET_TAGS = (); }; };
-		94DBDC4D1BC6832400AF9F85 /* BBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DBDC421BC6832400AF9F85 /* BBCell.xib */; settings = {ASSET_TAGS = (); }; };
-		94DBDC4F1BC6832400AF9F85 /* UIImage+GradientsMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */; settings = {ASSET_TAGS = (); }; };
+		94DBDC471BC6832400AF9F85 /* PCSEQVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */; };
+		94DBDC481BC6832400AF9F85 /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3A1BC6832400AF9F85 /* BBAppDelegate.m */; };
+		94DBDC491BC6832400AF9F85 /* BBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3C1BC6832400AF9F85 /* BBMainViewController.m */; };
+		94DBDC4C1BC6832400AF9F85 /* BBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC411BC6832400AF9F85 /* BBCell.m */; };
+		94DBDC4D1BC6832400AF9F85 /* BBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DBDC421BC6832400AF9F85 /* BBCell.xib */; };
+		94DBDC4F1BC6832400AF9F85 /* UIImage+GradientsMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */; };
+		94E0FD851C28BCE6006629B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94E0FD841C28BCE6006629B1 /* LaunchScreen.xib */; };
+		94E39F8F1C28A00C00107F03 /* BBSearchBarWithActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E39F8E1C28A00C00107F03 /* BBSearchBarWithActivity.m */; };
+		94E39F961C28A34C00107F03 /* BBCellSelectionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E39F951C28A34C00107F03 /* BBCellSelectionContext.m */; };
+		94E39F991C28A47100107F03 /* BBSoundsContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E39F981C28A47100107F03 /* BBSoundsContext.m */; };
 		F9359ECDF84BF8818B5B69E7 /* Pods_BumbleB_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5FD4089A26FB3F1B91F30E /* Pods_BumbleB_iOS_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,7 +50,7 @@
 		3F78CD2F856664658B0370B0 /* BumbleB-iOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "BumbleB-iOS.podspec"; path = "../BumbleB-iOS.podspec"; sourceTree = "<group>"; };
 		418C6B6AD831AF67D5B93536 /* Pods-BumbleB-iOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BumbleB-iOS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BumbleB-iOS_Example/Pods-BumbleB-iOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5B34EB0443166242C1B77A59 /* Pods-BumbleB-iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BumbleB-iOS_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BumbleB-iOS_Example/Pods-BumbleB-iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* BumbleB-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "BumbleB-iOS.app"; path = "BumbleB-iOS_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* BumbleB-iOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BumbleB-iOS_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -57,7 +59,7 @@
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* BumbleB-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BumbleB-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = "BumbleB-iOS_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* BumbleB-iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BumbleB-iOS_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -71,14 +73,18 @@
 		94DBDC3A1BC6832400AF9F85 /* BBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAppDelegate.m; sourceTree = "<group>"; };
 		94DBDC3B1BC6832400AF9F85 /* BBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMainViewController.h; sourceTree = "<group>"; };
 		94DBDC3C1BC6832400AF9F85 /* BBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMainViewController.m; sourceTree = "<group>"; };
-		94DBDC3D1BC6832400AF9F85 /* BBNoResultsFound.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBNoResultsFound.xib; sourceTree = "<group>"; };
-		94DBDC3E1BC6832400AF9F85 /* BBSearchBarWithActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSearchBarWithActivity.h; sourceTree = "<group>"; };
-		94DBDC3F1BC6832400AF9F85 /* BBSearchBarWithActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSearchBarWithActivity.m; sourceTree = "<group>"; };
 		94DBDC401BC6832400AF9F85 /* BBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCell.h; sourceTree = "<group>"; };
 		94DBDC411BC6832400AF9F85 /* BBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCell.m; sourceTree = "<group>"; };
 		94DBDC421BC6832400AF9F85 /* BBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBCell.xib; sourceTree = "<group>"; };
 		94DBDC451BC6832400AF9F85 /* UIImage+GradientsMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientsMaker.h"; sourceTree = "<group>"; };
 		94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientsMaker.m"; sourceTree = "<group>"; };
+		94E0FD841C28BCE6006629B1 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		94E39F8D1C28A00C00107F03 /* BBSearchBarWithActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSearchBarWithActivity.h; sourceTree = "<group>"; };
+		94E39F8E1C28A00C00107F03 /* BBSearchBarWithActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSearchBarWithActivity.m; sourceTree = "<group>"; };
+		94E39F941C28A34C00107F03 /* BBCellSelectionContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCellSelectionContext.h; sourceTree = "<group>"; };
+		94E39F951C28A34C00107F03 /* BBCellSelectionContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCellSelectionContext.m; sourceTree = "<group>"; };
+		94E39F971C28A47100107F03 /* BBSoundsContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSoundsContext.h; sourceTree = "<group>"; };
+		94E39F981C28A47100107F03 /* BBSoundsContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSoundsContext.m; sourceTree = "<group>"; };
 		B37E2CADE1E228D8EEFB3256 /* Pods_BumbleB_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BumbleB_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB8B6AAE0AD156B22A0D4AC /* Pods-BumbleB-iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BumbleB-iOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BumbleB-iOS_Tests/Pods-BumbleB-iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,8 +130,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* BumbleB-iOS.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* BumbleB-iOS_Example.app */,
+				6003F5AE195388D20070C39A /* BumbleB-iOS_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,16 +157,17 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				94DBDC3B1BC6832400AF9F85 /* BBMainViewController.h */,
 				94DBDC3C1BC6832400AF9F85 /* BBMainViewController.m */,
-				94DBDC3D1BC6832400AF9F85 /* BBNoResultsFound.xib */,
-				94DBDC3E1BC6832400AF9F85 /* BBSearchBarWithActivity.h */,
-				94DBDC3F1BC6832400AF9F85 /* BBSearchBarWithActivity.m */,
 				94DBDC401BC6832400AF9F85 /* BBCell.h */,
 				94DBDC411BC6832400AF9F85 /* BBCell.m */,
 				94DBDC421BC6832400AF9F85 /* BBCell.xib */,
-				94DBDC451BC6832400AF9F85 /* UIImage+GradientsMaker.h */,
-				94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */,
-				94DBDC371BC6832400AF9F85 /* PCSEQVisualizer.h */,
-				94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */,
+				94E39F8D1C28A00C00107F03 /* BBSearchBarWithActivity.h */,
+				94E39F8E1C28A00C00107F03 /* BBSearchBarWithActivity.m */,
+				94E39F941C28A34C00107F03 /* BBCellSelectionContext.h */,
+				94E39F951C28A34C00107F03 /* BBCellSelectionContext.m */,
+				94E39F971C28A47100107F03 /* BBSoundsContext.h */,
+				94E39F981C28A47100107F03 /* BBSoundsContext.m */,
+				94E0FD841C28BCE6006629B1 /* LaunchScreen.xib */,
+				94E39F901C28A0D200107F03 /* External */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -208,6 +215,17 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		94E39F901C28A0D200107F03 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				94DBDC451BC6832400AF9F85 /* UIImage+GradientsMaker.h */,
+				94DBDC461BC6832400AF9F85 /* UIImage+GradientsMaker.m */,
+				94DBDC371BC6832400AF9F85 /* PCSEQVisualizer.h */,
+				94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
 		FCDB43AB7BF3767E9304CFAF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +257,7 @@
 			);
 			name = "BumbleB-iOS_Example";
 			productName = "BumbleB-iOS";
-			productReference = 6003F58A195388D20070C39A /* BumbleB-iOS.app */;
+			productReference = 6003F58A195388D20070C39A /* BumbleB-iOS_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* BumbleB-iOS_Tests */ = {
@@ -260,7 +278,7 @@
 			);
 			name = "BumbleB-iOS_Tests";
 			productName = "BumbleB-iOSTests";
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* BumbleB-iOS_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -271,7 +289,7 @@
 			attributes = {
 				CLASSPREFIX = BB;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Ram Greenberg";
+				ORGANIZATIONNAME = BumbleB;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -302,8 +320,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E0FD851C28BCE6006629B1 /* LaunchScreen.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
-				94DBDC4A1BC6832400AF9F85 /* BBNoResultsFound.xib in Resources */,
 				94DBDC4D1BC6832400AF9F85 /* BBCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -418,12 +436,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E39F8F1C28A00C00107F03 /* BBSearchBarWithActivity.m in Sources */,
 				94DBDC471BC6832400AF9F85 /* PCSEQVisualizer.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				94DBDC4C1BC6832400AF9F85 /* BBCell.m in Sources */,
+				94E39F961C28A34C00107F03 /* BBCellSelectionContext.m in Sources */,
+				94E39F991C28A47100107F03 /* BBSoundsContext.m in Sources */,
 				94DBDC491BC6832400AF9F85 /* BBMainViewController.m in Sources */,
 				94DBDC4F1BC6832400AF9F85 /* UIImage+GradientsMaker.m in Sources */,
-				94DBDC4B1BC6832400AF9F85 /* BBSearchBarWithActivity.m in Sources */,
 				94DBDC481BC6832400AF9F85 /* BBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +502,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -521,7 +541,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

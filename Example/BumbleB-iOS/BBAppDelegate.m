@@ -2,8 +2,8 @@
 //  BBAppDelegate.m
 //  BumbleB-iOS
 //
-//  Created by Ram Greenberg on 10/08/2015.
-//  Copyright (c) 2015 Ram Greenberg. All rights reserved.
+//  Created by BumbleB on 10/08/2015.
+//  Copyright (c) 2015 BumbleB. All rights reserved.
 //
 
 #import "BBAppDelegate.h"

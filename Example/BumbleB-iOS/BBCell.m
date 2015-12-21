@@ -1,29 +1,27 @@
 //
 //  BBCell.m
-//  BumbleB-iOS
 //
-//  Created by Ram Greenberg on 10/08/2015.
-//  Copyright (c) 2015 Ram Greenberg. All rights reserved.
+//  Created by BumbleB on 7/14/15.
+//  Copyright (c) 2015 BumbleB. All rights reserved.
 //
 
 #import "BBCell.h"
-#import <AVFoundation/AVFoundation.h>
 #import "PCSEQVisualizer.h"
 #import <BumbleB_iOS/BumbleBSound.h>
-#import "UIImage+GradientsMaker.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
-@interface BBCell() <AVAudioPlayerDelegate>
+@interface BBCell()
 
-@property (strong, nonatomic) BumbleB* sound;
 @property (strong, nonatomic) PCSEQVisualizer *visualizer;
 @property (weak, nonatomic) IBOutlet UIView *visualizerContainer;
 @property (weak, nonatomic) IBOutlet UILabel *soundTranscription;
 @property (weak, nonatomic) IBOutlet UILabel *soundDescription;
 @property (weak, nonatomic) IBOutlet UILabel *soundDuration;
 @property (weak, nonatomic) IBOutlet UIImageView *posterImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textWrapperHeightConstraints;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageIndicator;
 
-@property (strong, nonatomic) AVAudioPlayer* player;
+@property (strong, nonatomic) NSURLSessionDataTask* audioDataTask;
 
 @end
 
@@ -31,63 +29,105 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    UIColor* pinkColor = [UIColor colorWithRed:(255/255.0) green:(20/255.0) blue:(147/255.0) alpha:1] ;
-    self.visualizer = [[PCSEQVisualizer alloc] initWithNumberOfBars:3 withColot:pinkColor];
+    self.visualizer = [[PCSEQVisualizer alloc] initWithNumberOfBars:3 withColot:[UIColor colorWithRed:38/255.0 green:47/255.0 blue:80/255.0 alpha:0.5]];
     self.visualizer.frame = self.visualizerContainer.bounds;
     [self.visualizerContainer addSubview:self.visualizer];
     
-    [self updateLayoutWithState:NO];
+    //set bg color of selected cell
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:225/255.0 green:237/255.0 blue:255/255.0 alpha:1];
+    [self setSelectedBackgroundView:bgColorView];
     
+    
+    self.soundTranscription.numberOfLines = 0;
+    
+    [self updateLayoutWithState:NO];
 }
 
 -(void)prepareForReuse
 {
     [super prepareForReuse];
+    self.textWrapperHeightConstraints.constant = 36;
     [self updateLayoutWithState:NO];
+    [self.audioDataTask cancel];
+    self.posterImage.image = nil;
+    self.soundData = nil;
+    self.player = nil;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void) layoutSubviews{
+    [super layoutSubviews];
+    [self updateTextWrapperLayout];
 }
 
 -(void)setSound:(BumbleB *)sound{
-    if([sound.soundId isEqualToString:self.sound.soundId]){
-        return;
-    }
-    
     _sound = sound;
     self.soundTranscription.text = sound.transcription;
     self.soundDescription.text = [NSString stringWithFormat:@"%@%@",sound.title,[self dateFormatForDescription:sound.releaseDateTime]];
     self.soundDuration.text = [self formatDuration:sound.duration];
     
-    BumbleBSound* bumbleBSound = (BumbleBSound*)[[sound.sounds allValues] firstObject];
-    
-    //set posterImage
-    [self.posterImage setImageWithURL:sound.image.url];
-    self.posterImage.layer.cornerRadius = 10;
-    self.posterImage.clipsToBounds = YES;
+    BumbleBSound* soundParams = (BumbleBSound*)[[sound.sounds allValues] firstObject];
     
     //load sound
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:bumbleBSound.url
-            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                // handle response
-                if(error){
-                    NSLog(@"ERROR (dataTaskWithURL) - %@",error.description);
-                    return;
-                }
-                NSError *PlayerError;
-                self.player = [[AVAudioPlayer alloc] initWithData:data error:&PlayerError];
-                if (PlayerError){
-                    NSLog(@"ERROR (initWithData) - %@",PlayerError.description);
-                    return;
-                }
-                self.player.delegate = self;
-            }] resume];
+    [self loadSoundForUrl:soundParams.url];
+    
+    //set posterImage
+    [self loadPosterImageForSound:sound];
 }
-                        
+
+-(void) loadPosterImageForSound:(BumbleB *)sound{
+    if(!sound.image.url){
+        self.posterImage.image = [UIImage imageNamed:@"Fallback"];
+    }
+    else{
+        [self.imageIndicator startAnimating];
+        NSURLRequest* urlRequest = [NSURLRequest requestWithURL:sound.image.url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60];
+        [self.posterImage setImageWithURLRequest:urlRequest placeholderImage:nil success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, UIImage * _Nonnull image) {
+            //we do not stop the animation because we would like the animation to continue in case the sound hasnt downloaded yet
+            //[self.imageIndicator stopAnimating];
+            self.posterImage.image = image;
+        } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, NSError * _Nonnull error) {
+            //[self.imageIndicator stopAnimating];
+            self.posterImage.image = [UIImage imageNamed:@"Fallback"];
+        }];
+    }
+    
+    self.posterImage.layer.cornerRadius = 1;
+    self.posterImage.clipsToBounds = YES;
+}
+
+-(void) loadSoundForUrl:(NSURL*)url{
+    NSURLSessionConfiguration* sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfiguration.requestCachePolicy = NSURLRequestReturnCacheDataElseLoad;
+    sessionConfiguration.URLCache = [NSURLCache sharedURLCache];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    
+    //Hack - start animation and hide image to make sure the indicator is stopped only when the sound was download
+    [self.imageIndicator startAnimating];
+    self.posterImage.hidden = YES;
+    
+    self.audioDataTask = [session dataTaskWithURL:url
+                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                    if(!error){
+                                        self.soundData = data;
+                                        NSError *PlayerError;
+                                        self.player = [[AVAudioPlayer alloc] initWithData:data error:&PlayerError];
+                                        if (PlayerError){
+                                            NSLog(@"ERROR (initWithData) - %@ for sound transcript %@",PlayerError.description,self.soundTranscription.text);
+                                        }
+                                    }
+                                    else if (![error.userInfo[@"NSLocalizedDescription"] isEqualToString:@"cancelled"]){
+                                        NSLog(@"ERROR (dataTaskWithURL) - %@ for sound transcript %@",error.description, self.soundTranscription.text);
+                                    }
+                                    // handle response
+                                    dispatch_sync(dispatch_get_main_queue(), ^{
+                                        self.posterImage.hidden = NO;
+                                    });
+                                }];
+    [self.audioDataTask resume];
+}
+
 -(NSString*) dateFormatForDescription:(NSDate*)date{
     if(!date){
         return @"";
@@ -96,7 +136,7 @@
     NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
     
     [dateFormater setDateFormat:@"yyyy"];
-    return [NSString stringWithFormat:@", (%@)",[dateFormater stringFromDate:date]];
+    return [NSString stringWithFormat:@", %@",[dateFormater stringFromDate:date]];
 }
 
 -(NSString *)formatDuration:(NSInteger)duration
@@ -107,25 +147,8 @@
     return [NSString stringWithFormat:@"0:0%ld", (long)duration];
 }
 
--(void)didTapOnCell{
-    if (self.player.playing){
-        [self.player stop];
-        [self updateLayoutWithState:NO];
-        return;
-    }
-    
-    [self.player play];
-    [self updateLayoutWithState:YES];
-}
-
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
-{
-    [self updateLayoutWithState:NO];
-}
-
--(void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error
-{
-     [self updateLayoutWithState:NO];
+-(void)playingLayout:(BOOL)playing{
+    [self updateLayoutWithState:playing];
 }
 
 -(void)updateLayoutWithState:(BOOL)playOn{
@@ -149,5 +172,19 @@
                     completion:NULL];
     
     view.hidden = hidden;
+}
+
+-(void) updateTextWrapperLayout{
+    NSDictionary *attributes = @{NSFontAttributeName: self.soundTranscription.font};
+    //we do not use self.soundTranscription.frame.size.width because the autolayout is not completed eventhough this method is being called from layoutSubviews.
+    CGFloat widthConstrint = self.frame.size.width - 109;
+    CGSize size = [self.soundTranscription.text boundingRectWithSize:CGSizeMake(widthConstrint, CGFLOAT_MAX)
+                                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                                          attributes:attributes
+                                                             context:nil].size;
+    if (self.soundTranscription.font.lineHeight < size.height) {
+        self.textWrapperHeightConstraints.constant = 53;
+    }
+    
 }
 @end

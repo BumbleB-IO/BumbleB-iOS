@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Specta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1870330095BAE7D0B5E19F45319418E8</key>
+		<key>07A12ECB22BB68BE2D0E60637E68BBFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>34B6528EBAEB1BCC50443BF3F6A06D8C</key>
+		<key>0864B6C1BE4E654B88D8B42FEC97FD55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49F9431A0FC7FF2351145D71790B47A1</key>
+		<key>0D888F29E05E498D0CD91A51D28599A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87D7FF0512254C1F80404EABB37A194B</key>
+		<key>288E6E735318669D43116F3F56BF2983</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FA9FE947FD97D5DB100CC9C31EDAAB6</key>
+		<key>4878C70B21CA37D7CB8A476BF986741B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5FDE2C55563BDE95372637949EBD073</key>
+		<key>9211ACAD3041A300DC725B06DA1F6AF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A865E0CFAFDF9D550DC54FB694A3924A</key>
+		<key>C2CBF9256C6ED90558A19376564707ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D03B40A037E9ECCFACE132BBD0FA8190</key>
+		<key>DD86ABD743B0605672C710ADC56EB9DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F78C6CE6D17F73F7ACDC9B774C91282A</key>
+		<key>ED4342E27597144E22BA4081D52F6DD1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FEF9B0575DD2C92B49D8E12B84255102</key>
 		<dict>
 			<key>primary</key>
 			<true/>

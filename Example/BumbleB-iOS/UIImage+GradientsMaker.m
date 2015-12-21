@@ -1,14 +1,3 @@
-
-//
-//  UIImageGradientsMaker.m
-//  Aniways
-//
-//  Created by Danny Shmueli on 10/26/14.
-//  Copyright (c) 2014 Ram Greenberg. All rights reserved.
-//
-
-#import "UIImage+GradientsMaker.h"
-
 //
 //  UIImage+Additions.m
 //  Created by Joan Martin.
@@ -39,6 +28,7 @@
 
 @end
 
+#import "UIImage+GradientsMaker.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (MD5Hashing)

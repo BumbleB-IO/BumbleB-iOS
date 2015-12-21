@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'BumbleB-iOS_Example', :exclusive => true do
   pod "BumbleB-iOS", :path => "../"
+  pod 'SVPullToRefresh'
 end
 
 target 'BumbleB-iOS_Tests', :exclusive => true do

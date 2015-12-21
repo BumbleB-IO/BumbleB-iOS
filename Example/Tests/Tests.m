@@ -2,8 +2,8 @@
 //  BumbleB-iOSTests.m
 //  BumbleB-iOSTests
 //
-//  Created by Ram Greenberg on 10/08/2015.
-//  Copyright (c) 2015 Ram Greenberg. All rights reserved.
+//  Created by BumbleB on 10/08/2015.
+//  Copyright (c) 2015 BumbleB. All rights reserved.
 //
 
 // https://github.com/Specta/Specta

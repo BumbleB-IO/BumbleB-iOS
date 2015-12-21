@@ -1,9 +1,8 @@
 //
-//  BBSearchBarWithActivity.m
-//  BumbleB-iOS
+//  SearchBarWithActivity.m
 //
-//  Created by Ram Greenberg on 10/08/2015.
-//  Copyright (c) 2015 Ram Greenberg. All rights reserved.
+//  Created by BumbleB on 10/08/15.
+//  Copyright (c) 2015 BumbleB. All rights reserved.
 //
 
 #import "BBSearchBarWithActivity.h"
@@ -35,7 +34,7 @@
             taiv.center = CGPointMake(searchField.leftView.bounds.origin.x + searchField.leftView.bounds.size.width/2,
                                       searchField.leftView.bounds.origin.y + searchField.leftView.bounds.size.height/2);
             taiv.hidesWhenStopped = YES;
-            taiv.backgroundColor = [UIColor whiteColor];
+            taiv.backgroundColor = self.indicatorBgColor;
             self.activityIndicatorView = taiv;
             
             [searchField.leftView addSubview:self.activityIndicatorView];
@@ -51,6 +50,10 @@
 
 - (void)finishActivity {
     [self.activityIndicatorView stopAnimating];
+}
+
+- (BOOL) isAnimating{
+    return [self.activityIndicatorView isAnimating];
 }
 
 @end
