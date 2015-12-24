@@ -50,7 +50,7 @@ static NSString* const kRespponsePaginationKey = @"pagination";
 static NSString* const kRespponseTotalCountKey = @"total_count";
 static NSString* const kResponseMetKey = @"meta";
 
-static NSString* const kBumbleBBasedURL =  @"http://api.bumbleb.io/v1/sounds";
+static NSString* const kBumbleBBasedURL =  @"https://api.bumbleb.io/v1/sounds";
 
 static NSString* kBumbleBAPIKey;
 
