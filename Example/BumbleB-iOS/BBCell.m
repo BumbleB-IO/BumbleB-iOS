@@ -66,46 +66,64 @@
     self.soundDescription.text = [NSString stringWithFormat:@"%@%@",sound.title,[self dateFormatForDescription:sound.releaseDateTime]];
     self.soundDuration.text = [self formatDuration:sound.duration];
     
-    BumbleBSound* soundParams = (BumbleBSound*)[[sound.sounds allValues] firstObject];
+    BumbleBSound* soundParams = sound.firstSound;
     
+    //start animation and hide image to make sure the indicator is stopped only when the sound was download
+    [self.imageIndicator startAnimating];
+    self.posterImage.hidden = YES;
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_enter(group);
     //load sound
-    [self loadSoundForUrl:soundParams.url];
+    [self loadSoundForUrl:soundParams.url completion:^{
+        dispatch_group_leave(group);
+    }];
     
+    dispatch_group_enter(group);
     //set posterImage
-    [self loadPosterImageForSound:sound];
+    [self loadPosterImageForSound:sound completion:^{
+        dispatch_group_leave(group);
+    }];
+    
+    dispatch_group_notify(group,dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^ {
+        // handle response
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.posterImage.hidden = NO;
+            [self.imageIndicator stopAnimating];
+        });
+    });
+
 }
 
--(void) loadPosterImageForSound:(BumbleB *)sound{
+-(void) loadPosterImageForSound:(BumbleB *)sound completion:(void (^)(void))callbackBlock{
+    self.posterImage.layer.cornerRadius = 1;
+    self.posterImage.clipsToBounds = YES;
+    
     if(!sound.image.url){
         self.posterImage.image = [UIImage imageNamed:@"Fallback"];
+        callbackBlock();
     }
     else{
         [self.imageIndicator startAnimating];
         NSURLRequest* urlRequest = [NSURLRequest requestWithURL:sound.image.url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60];
         [self.posterImage setImageWithURLRequest:urlRequest placeholderImage:nil success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, UIImage * _Nonnull image) {
-            //we do not stop the animation because we would like the animation to continue in case the sound hasnt downloaded yet
-            //[self.imageIndicator stopAnimating];
             self.posterImage.image = image;
+            callbackBlock();
         } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, NSError * _Nonnull error) {
-            //[self.imageIndicator stopAnimating];
             self.posterImage.image = [UIImage imageNamed:@"Fallback"];
+            callbackBlock();
         }];
     }
     
-    self.posterImage.layer.cornerRadius = 1;
-    self.posterImage.clipsToBounds = YES;
+    
 }
 
--(void) loadSoundForUrl:(NSURL*)url{
+-(void) loadSoundForUrl:(NSURL*)url completion:(void (^)(void))callbackBlock{
     NSURLSessionConfiguration* sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     sessionConfiguration.requestCachePolicy = NSURLRequestReturnCacheDataElseLoad;
     sessionConfiguration.URLCache = [NSURLCache sharedURLCache];
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
-    
-    //Hack - start animation and hide image to make sure the indicator is stopped only when the sound was download
-    [self.imageIndicator startAnimating];
-    self.posterImage.hidden = YES;
     
     self.audioDataTask = [session dataTaskWithURL:url
                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -120,10 +138,7 @@
                                     else if (![error.userInfo[@"NSLocalizedDescription"] isEqualToString:@"cancelled"]){
                                         NSLog(@"ERROR (dataTaskWithURL) - %@ for sound transcript %@",error.description, self.soundTranscription.text);
                                     }
-                                    // handle response
-                                    dispatch_sync(dispatch_get_main_queue(), ^{
-                                        self.posterImage.hidden = NO;
-                                    });
+                                    callbackBlock();
                                 }];
     [self.audioDataTask resume];
 }
