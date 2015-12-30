@@ -54,6 +54,9 @@ extern NSString * const kBumbleBPublicAPIKey;
 /** sounds formats  */
 @property (readonly, strong, nonatomic) NSDictionary * sounds;
 
+/** first sound url and type  */
+@property (readonly, strong, nonatomic) BumbleBSound* firstSound;
+
 
 /** Set your BumbleB API Key.*/
 + (void) setBumbleBAPIKey:(NSString *) APIkey;

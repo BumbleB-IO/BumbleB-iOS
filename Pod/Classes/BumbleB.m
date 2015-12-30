@@ -54,6 +54,10 @@ static NSString* const kBumbleBBasedURL =  @"https://api.bumbleb.io/v1/sounds";
 
 static NSString* kBumbleBAPIKey;
 
+-(BumbleBSound*) firstSound{
+    return [[self.sounds allValues] firstObject];
+}
+
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary
 {
     self = [super init];
@@ -75,7 +79,7 @@ static NSString* kBumbleBAPIKey;
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
     self.importDateTime = [dateFormatter dateFromString:dictionary[kImportDateKey]];
     self.releaseDateTime = [dateFormatter dateFromString:dictionary[kReleaseDateKey]];
-    //Hack
+    //format might be different in some cases
     if(!self.releaseDateTime){
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
         self.releaseDateTime = [dateFormatter dateFromString:dictionary[kReleaseDateKey]];

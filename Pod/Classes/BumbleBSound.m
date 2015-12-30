@@ -17,6 +17,10 @@
 
 @implementation BumbleBSound
 
+-(NSString*) type{
+    return [self.url pathExtension];
+}
+
 static NSString* const kURLKey = @"url";
 static NSString* const kSizeKey = @"size";
 
