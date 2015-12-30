@@ -18,7 +18,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		65AB3FA19CBC4AFB403868EF /* Pods_BumbleB_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37E2CADE1E228D8EEFB3256 /* Pods_BumbleB_iOS_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		65AB3FA19CBC4AFB403868EF /* Pods_BumbleB_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37E2CADE1E228D8EEFB3256 /* Pods_BumbleB_iOS_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		94DBDC471BC6832400AF9F85 /* PCSEQVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC381BC6832400AF9F85 /* PCSEQVisualizer.m */; };
 		94DBDC481BC6832400AF9F85 /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBDC3A1BC6832400AF9F85 /* BBAppDelegate.m */; };
@@ -30,7 +30,7 @@
 		94E39F8F1C28A00C00107F03 /* BBSearchBarWithActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E39F8E1C28A00C00107F03 /* BBSearchBarWithActivity.m */; };
 		94E39F961C28A34C00107F03 /* BBCellSelectionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E39F951C28A34C00107F03 /* BBCellSelectionContext.m */; };
 		94E39F991C28A47100107F03 /* BBSoundsContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E39F981C28A47100107F03 /* BBSoundsContext.m */; };
-		F9359ECDF84BF8818B5B69E7 /* Pods_BumbleB_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5FD4089A26FB3F1B91F30E /* Pods_BumbleB_iOS_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F9359ECDF84BF8818B5B69E7 /* Pods_BumbleB_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5FD4089A26FB3F1B91F30E /* Pods_BumbleB_iOS_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

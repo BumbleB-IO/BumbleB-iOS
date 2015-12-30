@@ -1,6 +1,6 @@
 {
   "name": "BumbleB-iOS",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "summary": "convenient access to the BumbleB API for objective-c developers",
   "description": "BumbleB-iOS provides convenient access to the BumbleB API for objective-c developers. The interface converts Soundy API responses into NSObjects",
   "homepage": "https://github.com/BumbleB-IO/BumbleB-iOS",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/BumbleB-IO/BumbleB-iOS.git",
-    "tag": "0.1.0"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "7.0"
