@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BC5D663C8B82A076EFF7DDFF'
+               BlueprintIdentifier = '27D836B51B2EABC51495E11A'
                BlueprintName = 'BumbleB-iOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'BumbleB_iOS.framework'>
