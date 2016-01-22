@@ -17,21 +17,11 @@ extern NSString * const kBumbleBPublicAPIKey;
 
 @interface BumbleB : NSObject
 
+//Mandatory parameters
+
 /** BumbleB Id for this sound*/
 @property (readonly, strong, nonatomic) NSString * soundId;
 @property (readonly, strong, nonatomic) NSString * type;
-
-/** page URL */
-@property (readonly, strong, nonatomic) NSURL * pageUrl;
-
-/** username who uploaded this sound */
-@property (readonly, strong, nonatomic) NSString * username;
-
-/** the source URL of this sound */
-@property (readonly, strong, nonatomic) NSURL * sourceUrl;
-
-/** rating of this sound */
-@property (readonly, strong, nonatomic) NSString * rating;
 
 /** title of this sound clip */
 @property (readonly, strong, nonatomic) NSString * title;
@@ -45,14 +35,30 @@ extern NSString * const kBumbleBPublicAPIKey;
 /** import date to the platform */
 @property (readonly, strong, nonatomic) NSDate * importDateTime;
 
+/** default icon for this sound  */
+@property (readonly, strong, nonatomic) BumbleBImage * icon;
+
+/** sounds formats  */
+@property (readonly, strong, nonatomic) NSDictionary * sounds;
+
+//Optional parameters
+
+/** the source URL of this sound */
+@property (readonly, strong, nonatomic) NSURL * sourceUrl;
+
 /** release date of the original movie\series */
 @property (readonly, strong, nonatomic) NSDate * releaseDateTime;
 
 /** relevant image to this sound clip  */
 @property (readonly, strong, nonatomic) BumbleBImage * image;
 
-/** sounds formats  */
-@property (readonly, strong, nonatomic) NSDictionary * sounds;
+/** category of this sound clip */
+@property (readonly, strong, nonatomic) NSString * category;
+
+/** sub categories of this sound clip */
+@property (readonly, strong, nonatomic) NSArray * subCategories;
+
+//Helper
 
 /** first sound url and type  */
 @property (readonly, strong, nonatomic) BumbleBSound* firstSound;

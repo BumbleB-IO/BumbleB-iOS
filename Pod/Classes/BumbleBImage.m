@@ -31,10 +31,10 @@ static NSString* const kSizeKey = @"size";
         return nil;
     }
     
-    self.url = [NSURL URLWithString:dictionary[kURLKey]];
-    self.width = [dictionary[kWidthKey] floatValue];
-    self.height = [dictionary[kHeightKey] floatValue];
-    self.size = [dictionary[kSizeKey] integerValue];
+    self.url = (dictionary[kURLKey]) ? [NSURL URLWithString:dictionary[kURLKey]] : nil;
+    self.width = (dictionary[kWidthKey]) ? [dictionary[kWidthKey] floatValue] : 0;
+    self.height = (dictionary[kHeightKey]) ? [dictionary[kHeightKey] floatValue] : 0;
+    self.size = (dictionary[kSizeKey]) ? [dictionary[kSizeKey] integerValue] : 0;
     
     return self;
 }

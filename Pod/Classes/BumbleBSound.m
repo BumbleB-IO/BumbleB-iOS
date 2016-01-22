@@ -12,17 +12,15 @@
 
 @property (strong, readwrite, nonatomic) NSURL * url;
 @property (readwrite, nonatomic) NSInteger size;
+@property (strong, readwrite, nonatomic) NSString * type;
 
 @end
 
 @implementation BumbleBSound
 
--(NSString*) type{
-    return [self.url pathExtension];
-}
-
 static NSString* const kURLKey = @"url";
 static NSString* const kSizeKey = @"size";
+static NSString* const kTypeKey = @"type";
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary
 {
@@ -31,8 +29,9 @@ static NSString* const kSizeKey = @"size";
         return nil;
     }
     
-    self.url = [NSURL URLWithString:dictionary[kURLKey]];
-    self.size = [dictionary[kSizeKey] integerValue];
+    self.url = (dictionary[kURLKey]) ? [NSURL URLWithString:dictionary[kURLKey]] : nil;
+    self.size = (dictionary[kSizeKey]) ? [dictionary[kSizeKey] integerValue] : 0;
+    self.type = dictionary[kTypeKey];
     
     return self;
 }

@@ -15,17 +15,17 @@ NSString * const kBumbleBPublicAPIKey = @"pl3tyKWdljSBr";
 
 @property (readwrite, strong, nonatomic) NSString * type;
 @property (readwrite, strong, nonatomic) NSString * soundId;
-@property (readwrite, strong, nonatomic) NSURL * pageUrl;
-@property (readwrite, strong, nonatomic) NSString * username;
 @property (readwrite, strong, nonatomic) NSURL * sourceUrl;
-@property (readwrite, strong, nonatomic) NSString * rating;
 @property (readwrite, strong, nonatomic) NSString * title;
 @property (readwrite, strong, nonatomic) NSString * transcription;
 @property (readwrite, nonatomic) NSInteger duration;
 @property (readwrite, strong, nonatomic) NSDate * importDateTime;
 @property (readwrite, strong, nonatomic) NSDate * releaseDateTime;
 @property (readwrite, strong, nonatomic) BumbleBImage * image;
+@property (readwrite, strong, nonatomic) BumbleBImage * icon;
 @property (readwrite, strong, nonatomic) NSDictionary * sounds;
+@property (readwrite, strong, nonatomic) NSString * category;
+@property (readwrite, strong, nonatomic) NSArray * subCategories;
 
 @end
 
@@ -33,17 +33,18 @@ NSString * const kBumbleBPublicAPIKey = @"pl3tyKWdljSBr";
 
 static NSString* const kTypeKey = @"type";
 static NSString* const kBumbleBIdKey = @"id";
-static NSString* const kPageUrlKey = @"pageUrl";
-static NSString* const kUsernameKey = @"username";
 static NSString* const kSourceUrlKey = @"source";
-static NSString* const kRatingKey = @"rating";
 static NSString* const kTitleKey = @"title";
 static NSString* const kTranscriptionKey = @"transcription";
 static NSString* const kDurationKey = @"duration";
 static NSString* const kImportDateKey = @"import_datetime";
 static NSString* const kReleaseDateKey = @"release_datetime";
 static NSString* const kImageKey = @"image";
+static NSString* const kIconKey = @"icon";
 static NSString* const kSoundsKey = @"sounds";
+static NSString* const kcategoryKey = @"category";
+static NSString* const ksubCategoriesKey = @"subCategories";
+
 
 static NSString* const kRespponseDataKey = @"data";
 static NSString* const kRespponsePaginationKey = @"pagination";
@@ -65,28 +66,20 @@ static NSString* kBumbleBAPIKey;
         return nil;
     }
     
+    //mandatory parameters
+    
     self.type = dictionary[kTypeKey];
     self.soundId = dictionary[kBumbleBIdKey];
-    self.pageUrl = [NSURL URLWithString:dictionary[kPageUrlKey]];
-    self.username = dictionary[kUsernameKey];
-    self.sourceUrl = [NSURL URLWithString:dictionary[kSourceUrlKey]];
-    self.rating = dictionary[kRatingKey];
     self.title = dictionary[kTitleKey];
     self.transcription = dictionary[kTranscriptionKey];
-    self.duration = [dictionary[kDurationKey] integerValue];
+    self.duration = (dictionary[kDurationKey]) ? [dictionary[kDurationKey] integerValue] : 0;
     
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
-    self.importDateTime = [dateFormatter dateFromString:dictionary[kImportDateKey]];
-    self.releaseDateTime = [dateFormatter dateFromString:dictionary[kReleaseDateKey]];
-    //format might be different in some cases
-    if(!self.releaseDateTime){
-        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        self.releaseDateTime = [dateFormatter dateFromString:dictionary[kReleaseDateKey]];
-    }
+    self.importDateTime = (dictionary[kImportDateKey]) ? [dateFormatter dateFromString:dictionary[kImportDateKey]] : nil;
     
-    NSDictionary * imageJson = dictionary[kImageKey];
-    self.image = [[BumbleBImage alloc] initWithDictionary:imageJson];
+    NSDictionary * iconJson = dictionary[kIconKey];
+    self.icon =  (iconJson) ? [[BumbleBImage alloc] initWithDictionary:iconJson] : nil;
     
     __block NSDictionary * soundsJson = dictionary[kSoundsKey];
     NSMutableDictionary * parsedSounds = [NSMutableDictionary new];
@@ -95,6 +88,14 @@ static NSString* kBumbleBAPIKey;
     }];
     self.sounds = parsedSounds;
     
+    //Optional parameters
+    
+    self.sourceUrl = (dictionary[kSourceUrlKey]) ? [NSURL URLWithString:dictionary[kSourceUrlKey]] : nil;
+    self.releaseDateTime = (dictionary[kReleaseDateKey]) ? [dateFormatter dateFromString:dictionary[kReleaseDateKey]] : nil;
+    NSDictionary * imageJson = dictionary[kImageKey];
+    self.image =  (imageJson) ? [[BumbleBImage alloc] initWithDictionary:imageJson] : nil;
+    self.category = dictionary[kcategoryKey];
+    self.subCategories = (dictionary[ksubCategoriesKey]) ? dictionary[ksubCategoriesKey] : @[];
     return self;
 }
 

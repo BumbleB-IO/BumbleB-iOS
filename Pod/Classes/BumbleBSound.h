@@ -18,7 +18,7 @@
 /**
  Type of sound (wav, mp3, etc)
  */
-@property (readonly, weak) NSString * type;
+@property (readonly, strong, nonatomic) NSString * type;
 
 /**
  size of sound
