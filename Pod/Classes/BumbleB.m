@@ -183,12 +183,18 @@ static NSString* kBumbleBAPIKey;
 }
 
 + (NSURLSessionDataTask *) bumbleBSearchWithTerm:(NSString *) searchTerm categories:(NSArray*)categories limit:(NSUInteger) limit offset:(NSUInteger) offset completion:(void (^) (NSArray * results, NSInteger totalCount, NSError * error)) block{
+    if(!categories){
+        return [self bumbleBSearchWithTerm:searchTerm limit:limit offset:offset completion:block];
+    }
     NSURLRequest * request = [self bumbleBSearchRequestForTerm:searchTerm categories:categories limit:limit offset:offset];
     NSURLSessionDataTask *task = [self bumbleBSearchWithURLRequset:request complition:block];
     return task;
 }
 
 + (NSURLSessionDataTask *) bumbleBSearchWithTerm:(NSString *) searchTerm categories:(NSArray*)categories completion:(void (^) (NSArray * results, NSInteger totalCount, NSError * error)) block{
+    if(!categories){
+        return [self bumbleBSearchWithTerm:searchTerm completion:block];
+    }
     NSURLRequest * request = [self bumbleBSearchRequestForTerm:searchTerm categories:categories];
     NSURLSessionDataTask *task = [self bumbleBSearchWithURLRequset:request complition:block];
     return task;
@@ -284,12 +290,18 @@ static NSString* kBumbleBAPIKey;
 }
 
 + (NSURLSessionDataTask *) bumbleBTrendingFilteredByCategories:(NSArray*)categories limit:(NSUInteger) limit offset:(NSInteger) offset completion:(void (^) (NSArray * results, NSError * error)) block{
+    if(!categories){
+        return [self bumbleBTrendingWithLimit:limit offset:offset completion:block];
+    }
     NSURLRequest * request = [self bumbleBTrendingRequestFilteredByCategories:categories limit:limit offset:offset];
     NSURLSessionDataTask *task = [self bumbleBTrendingWithURLRequset:request complition:block];
     return task;
 }
 
 + (NSURLSessionDataTask *) bumbleBTrendingFilteredByCategories:(NSArray*)categories completion:(void (^) (NSArray * results, NSError * error)) block{
+    if(!categories){
+        return [self bumbleBTrendingWithCompletion:block];
+    }
     NSURLRequest * request = [self bumbleBTrendingRequestFilteredByCategories:categories];
     NSURLSessionDataTask *task = [self bumbleBTrendingWithURLRequset:request complition:block];
     return task;
