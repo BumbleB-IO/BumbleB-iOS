@@ -115,6 +115,15 @@ static NSString* kBumbleBAPIKey;
     kBumbleBAPIKey = APIKey;
 }
 
+
++ (NSURLRequest *) bumbleBSearchRequestForTerm:(NSString *)term categories:(NSArray*)categories{
+     return [self requestForEndPoint:@"/search" params:@{@"q": term, @"categories" : categories}];
+}
+
++ (NSURLRequest *) bumbleBSearchRequestForTerm:(NSString *)term categories:(NSArray*)categories limit:(NSUInteger)limit offset:(NSInteger) offset{
+    return [self requestForEndPoint:@"/search" params:@{@"limit": @(limit), @"offset": @(offset), @"q": term, @"categories" : categories}];
+}
+
 + (NSURLRequest *) bumbleBSearchRequestForTerm:(NSString *) term limit:(NSUInteger) limit offset:(NSInteger) offset
 {
     return [self requestForEndPoint:@"/search" params:@{@"limit": @(limit), @"offset": @(offset), @"q": term}];
@@ -141,6 +150,14 @@ static NSString* kBumbleBAPIKey;
     return [self requestForEndPoint:@"/trending" params:nil];
 }
 
++ (NSURLRequest *) bumbleBTrendingRequestFilteredByCategories:(NSArray*)categories limit:(NSUInteger)limit offset:(NSInteger) offset{
+    return [self requestForEndPoint:@"/trending" params:@{@"limit": @(limit), @"offset": @(offset), @"categories" : categories}];
+}
+
++ (NSURLRequest *) bumbleBTrendingRequestFilteredByCategories:(NSArray*)categories{
+    return [self requestForEndPoint:@"/trending" params:@{@"categories" : categories}];
+}
+
 + (NSURLRequest *) requestForEndPoint:(NSString *) endpoint params:(NSDictionary *) params
 {
     NSString * withEndPoint = [NSString stringWithFormat:@"%@%@", kBumbleBBasedURL, endpoint];
@@ -164,6 +181,19 @@ static NSString* kBumbleBAPIKey;
     NSURLSessionDataTask *task = [self bumbleBSearchWithURLRequset:request complition:block];
     return task;
 }
+
++ (NSURLSessionDataTask *) bumbleBSearchWithTerm:(NSString *) searchTerm categories:(NSArray*)categories limit:(NSUInteger) limit offset:(NSUInteger) offset completion:(void (^) (NSArray * results, NSInteger totalCount, NSError * error)) block{
+    NSURLRequest * request = [self bumbleBSearchRequestForTerm:searchTerm categories:categories limit:limit offset:offset];
+    NSURLSessionDataTask *task = [self bumbleBSearchWithURLRequset:request complition:block];
+    return task;
+}
+
++ (NSURLSessionDataTask *) bumbleBSearchWithTerm:(NSString *) searchTerm categories:(NSArray*)categories completion:(void (^) (NSArray * results, NSInteger totalCount, NSError * error)) block{
+    NSURLRequest * request = [self bumbleBSearchRequestForTerm:searchTerm categories:categories];
+    NSURLSessionDataTask *task = [self bumbleBSearchWithURLRequset:request complition:block];
+    return task;
+}
+
 
 + (NSURLSessionDataTask *)bumbleBSearchWithURLRequset:(NSURLRequest *)request complition:(void (^)(NSArray *, NSInteger, NSError *))block
 {
@@ -253,6 +283,18 @@ static NSString* kBumbleBAPIKey;
     return task;
 }
 
++ (NSURLSessionDataTask *) bumbleBTrendingFilteredByCategories:(NSArray*)categories limit:(NSUInteger) limit offset:(NSInteger) offset completion:(void (^) (NSArray * results, NSError * error)) block{
+    NSURLRequest * request = [self bumbleBTrendingRequestFilteredByCategories:categories limit:limit offset:offset];
+    NSURLSessionDataTask *task = [self bumbleBTrendingWithURLRequset:request complition:block];
+    return task;
+}
+
++ (NSURLSessionDataTask *) bumbleBTrendingFilteredByCategories:(NSArray*)categories completion:(void (^) (NSArray * results, NSError * error)) block{
+    NSURLRequest * request = [self bumbleBTrendingRequestFilteredByCategories:categories];
+    NSURLSessionDataTask *task = [self bumbleBTrendingWithURLRequset:request complition:block];
+    return task;
+}
+
 + (NSURLSessionDataTask *)bumbleBTrendingWithURLRequset:(NSURLRequest *)request complition:(void (^)(NSArray *,  NSError *))block
 {
     NSURLSession * session = [NSURLSession sharedSession];
@@ -277,7 +319,6 @@ static NSString* kBumbleBAPIKey;
     return task;
 }
 
-
 + (NSError *)customErrorFromResults:(NSDictionary *)results
 {
     NSArray * resultsData = results[kRespponseDataKey];
@@ -288,6 +329,5 @@ static NSString* kBumbleBAPIKey;
     }
     return nil;
 }
-
 
 @end

@@ -69,6 +69,12 @@ extern NSString * const kBumbleBPublicAPIKey;
 
 /** NSURLRequest */
 
+/** NSURLRequest to search sounds with term. You can filter by categories and limit results, with a max of 100. Use offset with limit to paginate through results. */
++ (NSURLRequest *) bumbleBSearchRequestForTerm:(NSString *)term categories:(NSArray*)categories limit:(NSUInteger)limit offset:(NSInteger) offset;
+
+/** NSURLRequest to search sounds with term. You can filter by categories. Returns 25 results by default */
++ (NSURLRequest *) bumbleBSearchRequestForTerm:(NSString *)term categories:(NSArray*)categories;
+
 /** NSURLRequest to search sounds with term. You can limit results, with a max of 100. Use offset with limit to paginate through results. */
 + (NSURLRequest *) bumbleBSearchRequestForTerm:(NSString *)term limit:(NSUInteger)limit offset:(NSInteger) offset;
 
@@ -87,6 +93,12 @@ extern NSString * const kBumbleBPublicAPIKey;
 /** NSURLRequest to trending sounds items. Returns 25 results by default. */
 + (NSURLRequest *) bumbleBTrendingRequest;
 
+/** NSURLRequest to trending sounds. Filtered by categories, you can limit results, with a max of 100. */
++ (NSURLRequest *) bumbleBTrendingRequestFilteredByCategories:(NSArray*)categories limit:(NSUInteger)limit offset:(NSInteger) offset;
+
+/** NSURLRequest to trending sounds items. Filtered by categories, returns 25 results by default. */
++ (NSURLRequest *) bumbleBTrendingRequestFilteredByCategories:(NSArray*)categories;
+
 
 /** ASYNC */
 
@@ -95,6 +107,12 @@ extern NSString * const kBumbleBPublicAPIKey;
 
 /** Search sounds with term. Returns 25 results by default. Asynchronously returns either array of BumbleB objects or an error. */
 + (NSURLSessionDataTask *) bumbleBSearchWithTerm:(NSString *) searchTerm completion:(void (^) (NSArray * results, NSInteger totalCount, NSError * error)) block;
+
+/** Search sounds with term filtered by categories. You can limit results, with a max of 100. Use offset with limit to paginate through results. Asynchronously returns either array of BumbleB objects or an error. */
++ (NSURLSessionDataTask *) bumbleBSearchWithTerm:(NSString *) searchTerm categories:(NSArray*)categories limit:(NSUInteger) limit offset:(NSUInteger) offset completion:(void (^) (NSArray * results, NSInteger totalCount, NSError * error)) block;
+
+/** Search sounds with term filtered by categories. Returns 25 results by default. Asynchronously returns either array of BumbleB objects or an error. */
++ (NSURLSessionDataTask *) bumbleBSearchWithTerm:(NSString *) searchTerm categories:(NSArray*)categories completion:(void (^) (NSArray * results, NSInteger totalCount, NSError * error)) block;
 
 /** Fetch sound with Id . Asynchronously returns either BumbleB object or an error.*/
 + (NSURLSessionDataTask *) bumbleBSoundForId:(NSString *) soundId completion:(void (^) (BumbleB * result, NSError * error)) block;
@@ -107,4 +125,10 @@ extern NSString * const kBumbleBPublicAPIKey;
 
 /** Trending sounds. Returns 25 results by default. Asynchronously returns either array of BumbleB objects or an error. */
 + (NSURLSessionDataTask *) bumbleBTrendingWithCompletion:(void (^) (NSArray * results, NSError * error)) block;
+
+/** Trending sounds filtered by categories. You can limit results, with a max of 100. Asynchronously returns either array of BumbleB objects or an error. */
++ (NSURLSessionDataTask *) bumbleBTrendingFilteredByCategories:(NSArray*)categories limit:(NSUInteger) limit offset:(NSInteger) offset completion:(void (^) (NSArray * results, NSError * error)) block;
+
+/** Trending sounds filtered by categories. Returns 25 results by default. Asynchronously returns either array of BumbleB objects or an error. */
++ (NSURLSessionDataTask *) bumbleBTrendingFilteredByCategories:(NSArray*)categories completion:(void (^) (NSArray * results, NSError * error)) block;
 @end
